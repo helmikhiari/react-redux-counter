@@ -3,9 +3,7 @@ import { DECREMENT, INCREMENT } from "../Const Actions/counterConst";
 
 const initialState =
 {
-    value: {
-
-    }
+    value:0
 }
 
 const counterReducer = (state = initialState, action) => {

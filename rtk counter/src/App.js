@@ -2,9 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Decrement, Increment } from './actions/counterActions';
 import Pcounter from './Pcounter';
-import { decrement, increment } from './slices/counterReducer';
-import { login, logout } from './slices/authReducer';
+import { Login, LogOUT } from './actions/authActions';
 
 function App() {
   const dispatch = useDispatch();
@@ -12,15 +12,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <button onClick={() => dispatch(increment())}>+</button>
+        {/* <button onClick={() => dispatch(Increment())}>+</button>
         <Pcounter />
-        <button onClick={() => dispatch(decrement())}>-</button>
+        <button onClick={() => dispatch(Decrement())}>-</button> */}
 
         {isAuthenticated ? <div>
           <h1>Welcome Admin</h1>
-          <button onClick={() => dispatch(logout())}>LogOut</button>
+          <button onClick={() => dispatch(LogOUT())}>LogOut</button>
         </div> :
-          <button onClick={() => dispatch(login())}>Login</button>
+          <button onClick={() => dispatch(Login())}>Login</button>
         }
 
 
